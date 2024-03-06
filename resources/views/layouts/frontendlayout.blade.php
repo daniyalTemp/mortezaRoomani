@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{asset('images/logo.png')}}" rel="icon" >
+    <link href="{{asset('images/logo.png')}}" rel="icon">
 
     <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -37,10 +37,10 @@
 <!-- end preloader -->
 
 <!-- start header -->
-@include('Frontend.header')
+@include('Front.header')
 <!-- end header -->
 
-@include('Frontend.navbar')
+@include('Front.navbar')
 
 @yield('content')
 </body>

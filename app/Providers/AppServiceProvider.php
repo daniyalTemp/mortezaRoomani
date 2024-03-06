@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\config;
+use App\Models\contact;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,10 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function ($view) {
             $view->with('config',
                 config::all()[0]);
+        });
+        view()->composer('*', function ($view) {
+            $view->with('contacts',
+                contact::where('seen', 0 )->get());
         });
     }
 }

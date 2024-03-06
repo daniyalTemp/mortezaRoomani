@@ -27,5 +27,19 @@ class DatabaseSeeder extends Seeder
                 'image' =>'profile.png',
             ]
         );
+        DB::table('configs')->insert(
+            [
+                'firstName' => 'init',
+                'lastName' => 'init',
+                'email' => 'init',
+                'address' => 'init',
+                'phone' => 'init',
+                'instagram' => 'init',
+                'telegram' => 'init',
+                'image' => 'init',
+                'about' => 'init',
+                'birthday' => 'init',
+            ]
+        );
     }
 }

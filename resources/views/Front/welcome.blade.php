@@ -2,41 +2,38 @@
 
 @section('content')
 
-
-
-
     <!-- start notification -->
     @include('layouts.notifications')
     <!-- end notification -->
 
 
-<!-- start home -->
-    @include('Frontend.home')
+    <!-- start home -->
+    @include('Front.home')
     <!-- end home -->
 
     <!-- start about -->
-    @include('Frontend.about')
+    @include('Front.about')
     <!-- end about -->
 
     <!-- start team -->
-    @include('Frontend.team')
+    @include('Front.team')
     <!-- end team -->
 
     <!-- start service -->
-    @include('Frontend.service')
+    @include('Front.service')
     <!-- end service -->
 
     <!-- start projects -->
-    @include('Frontend.projects')
+    @include('Front.projects')
     <!-- end projects -->
 
 
 
     <!-- start contact -->
-    @include('Frontend.contact')
+    @include('Front.contact')
     <!-- end contact -->
 
     <!-- start copyright -->
-    @include('Frontend.footer')
+    @include('Front.footer')
     <!-- end copyright -->
 @endsection

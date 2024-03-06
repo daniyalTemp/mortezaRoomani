@@ -14,18 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Route::get('/', function () {
-//    return view('Frontend.welcome');
+//    return view('Front.welcome');
 //});
 
 //panel
 Route::namespace('App\Http\Controllers\front')->group(function () {
     Route::get('/', 'homeController@index')->name('index');
+    Route::post('/', 'homeController@contactMe')->name('contactMe');
 
-//    Route::prefix('config')->group(function () {
-//        Route::get('/', 'configController@show')->name('dashboard.config.show');
-//        Route::post('/', 'configController@save')->name('dashboard.config.save');
-//
-//    });
+    Route::prefix('post')->group(function () {
+        Route::get('/{id}', 'postController@show')->name('post.show');
+        Route::get('/download/{id}', 'postController@download')->name('post.download');
+
+    });
+
+
 });
 
 
@@ -50,7 +53,11 @@ Route::prefix('panel')->middleware('auth')->namespace('App\Http\Controllers\admi
         Route::get('/delete/{id}', 'postController@delete')->name('dashboard.post.del');
         Route::post('/addSave/{id}', 'postController@addSave')->name('dashboard.post.addSave');
     });
+    Route::prefix('contact')->group(function () {
+        Route::get('/', 'contactController@list')->name('dashboard.contact.list');
+        Route::get('/seen/{id}', 'contactController@seen')->name('dashboard.contact.seen');
 
+    });
 
 });
 
